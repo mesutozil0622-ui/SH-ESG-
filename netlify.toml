@@ -1,0 +1,8 @@
+[build]
+  # Vite + npm (Google AI Studio export). Until the app code (package.json) is
+  # pushed, a temporary placeholder page is generated so deploys still succeed.
+  command = "if [ -f package.json ]; then npm run build; else mkdir -p dist && printf '%s\\n' '<!doctype html><html><head><meta charset=\"utf-8\"><title>SH-ESG</title></head><body><p>The app code has not been pushed yet.</p></body></html>' > dist/index.html; fi"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
